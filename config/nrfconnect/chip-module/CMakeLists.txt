@@ -223,9 +223,9 @@ add_dependencies(chip-gn kernel)
 # Define 'chip' target that exposes CHIP headers & libraries to the application
 # ==============================================================================
 
-zephyr_interface_library_named(chip)
-target_compile_definitions(chip INTERFACE CHIP_HAVE_CONFIG_H)
-target_include_directories(chip INTERFACE
+zephyr_interface_library_named(CHIP)
+target_compile_definitions(CHIP INTERFACE CHIP_HAVE_CONFIG_H)
+target_include_directories(CHIP INTERFACE
     ${CHIP_ROOT}/src
     ${CHIP_ROOT}/src/app/server
     ${CHIP_ROOT}/src/app/util
@@ -236,8 +236,8 @@ target_include_directories(chip INTERFACE
     ${CMAKE_CURRENT_BINARY_DIR}/gen/include
     ${CMAKE_CURRENT_BINARY_DIR}/gen/third_party/connectedhomeip/src/app/include
 )
-target_link_directories(chip INTERFACE ${CMAKE_CURRENT_BINARY_DIR}/lib)
-target_link_libraries(chip INTERFACE -Wl,--start-group ${CHIP_LIBRARIES} -Wl,--end-group)
-add_dependencies(chip chip-gn)
+target_link_directories(CHIP INTERFACE ${CMAKE_CURRENT_BINARY_DIR}/lib)
+target_link_libraries(CHIP INTERFACE -Wl,--start-group ${CHIP_LIBRARIES} -Wl,--end-group)
+add_dependencies(CHIP chip-gn)
 
 endif() # CONFIG_CHIP

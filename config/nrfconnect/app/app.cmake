@@ -33,7 +33,3 @@ list(APPEND ZEPHYR_EXTRA_MODULES ${CMAKE_CURRENT_LIST_DIR}/../chip-module)
 # Load NCS/Zephyr build system
 
 find_package(Zephyr HINTS $ENV{ZEPHYR_BASE})
-
-# Configure the application
-
-target_link_libraries(app PUBLIC chip)
