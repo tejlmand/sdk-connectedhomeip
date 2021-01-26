@@ -23,6 +23,7 @@ set(CONF_FILE ${CHIP_ROOT}/config/nrfconnect/app/sample-defaults.conf prj.conf)
 
 include(${CHIP_ROOT}/config/nrfconnect/app/app.cmake)
 
+find_package(Zephyr HINTS $ENV{ZEPHYR_BASE})
 project(chip-nrf52840-lock-example)
 
 target_include_directories(app PRIVATE 

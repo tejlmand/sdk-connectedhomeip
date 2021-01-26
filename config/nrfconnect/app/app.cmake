@@ -29,7 +29,3 @@ endif()
 # Add CHIP to the list of Zephyr modules
 
 list(APPEND ZEPHYR_EXTRA_MODULES ${CMAKE_CURRENT_LIST_DIR}/../../..)
-
-# Load NCS/Zephyr build system
-
-find_package(Zephyr HINTS $ENV{ZEPHYR_BASE})

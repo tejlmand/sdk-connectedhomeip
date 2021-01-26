@@ -25,6 +25,7 @@ endif()
 
 include(${CHIP_ROOT}/config/nrfconnect/app/app.cmake)
 
+find_package(Zephyr HINTS $ENV{ZEPHYR_BASE})
 project(chip-nrf52840-pigweed-example)
 
 target_include_directories(app PRIVATE main/include 
