@@ -13,7 +13,11 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
+name: connectedhomeip
 
 build:
-    cmake: .
-    kconfig: Kconfig
+    cmake: config/nrfconnect/chip-module
+    kconfig: config/nrfconnect/chip-module/Kconfig
+    depends:
+    - openthread
+
